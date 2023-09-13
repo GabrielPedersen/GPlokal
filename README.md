@@ -1,4 +1,1 @@
-# GPlokal
-
-Dette funker bra
-# GabrielLokal
+windows 
