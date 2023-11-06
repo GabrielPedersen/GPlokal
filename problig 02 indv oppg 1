@@ -1,0 +1,142 @@
+#her lager jeg norge
+red-1 = rectangle(100, 70, "solid", "red")
+
+red-2 = rectangle(200, 70, "solid", "red")
+
+White-1 = rectangle(20, 70, "solid", "white")
+
+white-2 = rectangle(120, 20, "solid", "white")
+
+white-3 = rectangle(220, 20, "solid", "white")
+
+blue-1 = rectangle(20, 70, "solid", "blue")
+
+blue-2 = rectangle(20, 20, "solid", "blue")
+
+blue-3 = rectangle(360, 20, "solid", "blue")
+
+#kombiner delene
+
+a1 = beside(red-1, White-1)
+
+#legger til blå
+
+a2 = beside(a1, blue-1)
+
+# legger til hvit
+
+a3 = beside(a2, White-1)
+
+# legger til siste rød
+
+a4 = beside(a3, red-2)
+
+#leger neste del
+
+b1 = beside(white-2, blue-2)
+
+# legger til hvit
+
+b2 = beside(b1, white-3)
+
+#kombiner a og b
+
+c = above(a4, b2)
+
+#legger til blå loddrett linje
+
+c1 = above(c, blue-3)
+
+#legger til hvit, blå, hvit linje- del 2
+
+d = above(c1, b2)
+
+#legger til siste halvdel som ble lagd i del a
+
+norge = above(d, a4)
+
+
+ 
+
+
+
+#danmark
+  
+dan-1 = rotate(180, a1)
+
+dan-2 = beside(a1, dan-1)
+
+dan-3 = rectangle(245, 40, "solid", "white")
+
+dan-4 = above(dan-2, dan-3)
+
+danmark = above(dan-4, dan-2)
+
+ 
+
+
+#sverige
+ 
+sve-1 = rectangle(300, 40, "solid", "Yellow")
+
+sve-2 = rectangle(40, 200, "solid", "yellow")
+
+sve-3 = overlay(sve-1, sve-2)
+
+sve-4 = rectangle(300, 200, "solid", "blue")
+
+sverige = overlay(sve-3, sve-4)
+
+  
+
+
+#finnland
+  
+fin-1 = rectangle(300, 40, "solid", "blue")
+
+fin-2 = rectangle(40, 200, "solid", "blue")
+
+fin-3 = overlay(fin-1, fin-2)
+
+fin-4 = rectangle(300, 200, "solid", "white")
+
+finnland = overlay(fin-3, fin-4)
+
+
+
+
+#færøyene
+   
+fer-1 = rectangle(300, 25, "solid", "red")
+
+fer-2 = rectangle(25, 200, "solid", "red")
+
+fer-3 = overlay(fer-1, fer-2)
+
+overlay(fin-3, fin-4)
+
+feroyene = overlay(fer-3, finnland)
+ 
+
+
+#island
+     
+is-1 = rectangle(300, 40, "solid", "white")
+
+is-2 = rectangle(40, 200, "solid", "white")
+
+is-3 = overlay(is-1, is-2)
+
+is-4 = overlay(is-3, sve-4)
+
+island = overlay(fer-3, is-4)
+
+
+# du kan skrive norge, sverige, danmark, finland, feroyene eller island for å få opp flagget du ønsker
+
+norge
+danmark
+sverige
+finnland 
+feroyene
+island
