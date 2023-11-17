@@ -1,0 +1,150 @@
+
+fun drawflag(land):
+fun flagnor(): 
+  red-1 = rectangle(100, 70, "solid", "red")
+
+red-2 = rectangle(200, 70, "solid", "red")
+
+White-1 = rectangle(20, 70, "solid", "white")
+
+white-2 = rectangle(120, 20, "solid", "white")
+
+white-3 = rectangle(220, 20, "solid", "white")
+
+blue-1 = rectangle(20, 70, "solid", "blue")
+
+blue-2 = rectangle(20, 20, "solid", "blue")
+
+blue-3 = rectangle(360, 20, "solid", "blue")
+
+#kombiner delene
+
+a1 = beside(red-1, White-1)
+
+#legger til blå
+
+a2 = beside(a1, blue-1)
+
+# legger til hvit
+
+a3 = beside(a2, White-1)
+
+# legger til siste rød
+
+a4 = beside(a3, red-2)
+
+#leger neste del
+
+b1 = beside(white-2, blue-2)
+
+# legger til hvit
+
+b2 = beside(b1, white-3)
+
+#kombiner a og b
+
+c = above(a4, b2)
+
+#legger til blå loddrett linje
+
+c1 = above(c, blue-3)
+
+#legger til hvit, blå, hvit linje- del 2
+
+d = above(c1, b2)
+
+#legger til siste halvdel som ble lagd i del a
+
+norge = above(d, a4)   
+    norge
+end  
+fun flagis(): 
+    is1 = rectangle(100, 200, "solid", "blue")
+    is2 = rectangle(200, 200, "solid", "blue")
+    isl1 = rectangle(20, 200, "solid", "red")
+    is3 = rectangle(40, 200, "solid", "white")
+    isl2 = overlay(isl1, is3)
+    is4 = overlay-align("right", "middle", isl2, is2)
+    is5 = beside(is4, is2)
+    is6 = rectangle(160, 40, "solid", "white")
+    is7 = overlay-align("left", "middle", is6, is5)
+    is8 = rectangle(200, 40, "solid", "white")
+    is9 = overlay-align("right", "middle", is8, is7)
+    is10 = rectangle(400, 20, "solid", "red")
+    is11 = overlay-align("middle", "middle", is10, is9)
+    is11
+    
+      
+end  
+fun flagfin():  
+    fin1 = rectangle(200, 200, "solid", "white")
+    fin2 = rectangle(200, 200, "solid", "white")
+    fin3 = rectangle(40, 200, "solid", "blue")
+    fin4 = overlay-align("right", "middle", fin3, fin2)
+    fin5 = beside(fin4, fin1)
+    fin6 = rectangle(400, 40, "solid", "blue")
+    fin7 = overlay-align("left", "middle", fin6, fin5)
+    fin7
+end
+fun flagsve():  
+    sve1 = rectangle(200, 200, "solid", "blue")
+    sve2 = rectangle(200, 200, "solid", "blue")
+    sve3 = rectangle(40, 200, "solid", "yellow")
+    sve4 = overlay-align("right", "middle", sve3, sve2)
+    sve5 = beside(sve4, sve1)
+    sve6 = rectangle(400, 40, "solid", "yellow")
+    sve7 = overlay-align("left", "middle", sve6, sve5)
+    sve7
+end
+fun flagdan():  
+    dan1 = rectangle(200, 200, "solid", "red")
+    dan2 = rectangle(200, 200, "solid", "red")
+    dan3 = rectangle(40, 200, "solid", "white")
+    dan4 = overlay-align("right", "middle", dan3, dan2)
+    dan5 = beside(dan4, dan1)
+    dan6 = rectangle(400, 40, "solid", "white")
+    dan7 = overlay-align("left", "middle", dan6, dan5)
+    dan7
+end
+  fun flagfer(): 
+    fer1 = rectangle(100, 200, "solid", "white")
+    fer2 = rectangle(200, 200, "solid", "white")
+    fero1 = rectangle(20, 200, "solid", "red")
+    fer3 = rectangle(40, 200, "solid", "blue")
+    fero2 = overlay(fero1, fer3)
+    fer4 = overlay-align("right", "middle", fero2, fer2)
+    fer5 = beside(fer4, fer2)
+    fer6 = rectangle(160, 40, "solid", "blue")
+    fer7 = overlay-align("left", "middle", fer6, fer5)
+    fer8 = rectangle(200, 40, "solid", "blue")
+    fer9 = overlay-align("right", "middle", fer8, fer7)
+    fer10 = rectangle(400, 20, "solid", "red")
+    fer11 = overlay-align("middle", "middle", fer10, fer9)
+    fer11
+    
+end
+  
+  if (land == "norge") or (land == 1): 
+    flagnor()    
+  else if (land == "island") or (land == 2):
+    flagis()  
+  else if (land == "finland") or (land == 3): 
+    flagfin() 
+  else if (land == "sverige") or (land == 4): 
+    flagsve()   
+  else if (land == "danmark") or (land == 5): 
+    flagdan() 
+  else if (land == "færøyene") or (land == 6): 
+    flagfer()
+  else:
+    "skriv en av de følgene: norge, island, finland, sverige, danmark, færøyene eller bruk tallene 1-6"
+  end
+end
+
+
+drawflag(1)
+drawflag(2)
+drawflag(3)
+drawflag(4)
+drawflag(5)
+drawflag(6)
