@@ -1,0 +1,42 @@
+include gdrive-sheets
+include data-source
+include shared-gdrive(
+"dcic-2021",
+  "1wyQZj_L0qqV9Ekgr9au6RX2iqt2Ga8Ep") 
+
+ssid = "1RYN0i4Zx_UETVuYacgaGfnFcv4l9zd9toQTTdkQkj7g"
+kWh-wealthy-consumer-data =
+  load-table: komponent, energi 
+    source: load-spreadsheet(ssid).sheet-by-name("kWh", true) 
+  sanitize energi using string-sanitizer 
+end
+
+
+DPUOF = 8
+DTPD = 40
+EPUOF = 10
+
+fun bilenergi():
+  block:
+    energy-per-day = (( DTPD / DPUOF ) * EPUOF)
+    energy-per-day
+  end
+end
+
+
+
+fun energi-to-number(s :: String) -> Number:
+  cases(Option) string-to-number(s):
+    | some(a) => a
+    | none => bilenergi()
+  end
+end
+
+
+energiNum = transform-column(kWh-wealthy-consumer-data, "energi", energi-to-number)
+
+energiNum
+
+
+
+bar-chart(energiNum, "komponent", "energi")
