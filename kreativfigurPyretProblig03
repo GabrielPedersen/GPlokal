@@ -1,0 +1,22 @@
+base = rectangle(150, 150, "solid", "black")
+
+fig1 = circle(37, "solid", "blue")
+
+fig2 = circle(37, "solid", "red")
+
+fig3 = circle(37, "solid", "yellow")
+
+fig4 = circle(37, "solid", "green")
+
+figur1 = overlay-align("left", "middle", fig1, base)
+
+figur2 = overlay-align("middle", "top", fig2, figur1)
+
+figur3 = overlay-align("right", "middle", fig3, figur2)
+
+figur4 = overlay-align("middle", "bottom", fig4, figur3)
+
+figur5 = circle(7, "solid", "black")
+
+kreativ_figur = overlay-align("middle", "middle", figur5, figur4)
+kreativ_figur
